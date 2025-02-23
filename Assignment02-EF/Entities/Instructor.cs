@@ -22,7 +22,7 @@ namespace Assignment02_EF.Entities
         public int DepartmentId { get; set; }
 
         [InverseProperty("Instructors")]
-        public Instructor Worker { get; set; }
+        public Department Worker { get; set; }
 
         public ICollection<CourseInstructor> InstructorCourse { get; set; } = new HashSet<CourseInstructor>();
     }
