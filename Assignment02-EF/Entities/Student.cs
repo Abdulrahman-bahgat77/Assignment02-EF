@@ -18,7 +18,7 @@ namespace Assignment02_EF.Entities
         public int Age { get; set; }
 
         [ForeignKey("Department")]
-        public int DepartmentId { get; set; }
+        public int ?DepartmentId { get; set; }
         [InverseProperty("Students")]
         public Department Department { get; set; }
 

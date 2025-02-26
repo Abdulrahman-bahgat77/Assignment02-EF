@@ -22,18 +22,18 @@ namespace Assignment02_EF.Configuration
             builder.Property(I => I.Address)
                 .HasDefaultValue("Giza");
 
-            ////One To One
-            //builder.HasOne(I=>I.ManageDepartment)
-            //    .WithOne(I => I.Manager)
-            //    .HasForeignKey<Department>(D => D.ManagerId)
-            //    .IsRequired(false);
+            //One To One
+            builder.HasOne(I => I.ManageDepartment)
+                .WithOne(I => I.Manager)
+                .HasForeignKey<Department>(D => D.ManagerId)
+                .IsRequired(false);
 
-            ////One To many
+            //One To many
 
-            //builder.HasOne(I => I.Worker)
-            //    .WithMany(D => D.Instructors)
-            //    .HasForeignKey(I => I.DepartmentId)
-            //    .IsRequired(false);
+            builder.HasOne(I => I.Worker)
+                .WithMany(D => D.Instructors)
+                .HasForeignKey(I => I.DepartmentId)
+                .IsRequired(false);
         }
     }
 }

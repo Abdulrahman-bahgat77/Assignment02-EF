@@ -4,6 +4,7 @@ using Assignment02_EF.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment02_EF.Migrations
 {
     [DbContext(typeof(ITIDbContext))]
-    partial class ITIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250226122033_NullableTopicId")]
+    partial class NullableTopicId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,7 @@ namespace Assignment02_EF.Migrations
 
                     b.HasIndex("TopicId");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Assignment02_EF.Entities.CourseInstructor", b =>
@@ -64,7 +66,7 @@ namespace Assignment02_EF.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("CourseInstructor", (string)null);
+                    b.ToTable("CourseInstructor");
                 });
 
             modelBuilder.Entity("Assignment02_EF.Entities.Department", b =>
@@ -92,7 +94,7 @@ namespace Assignment02_EF.Migrations
                         .IsUnique()
                         .HasFilter("[ManagerId] IS NOT NULL");
 
-                    b.ToTable("Departmentes", (string)null);
+                    b.ToTable("Departmentes");
                 });
 
             modelBuilder.Entity("Assignment02_EF.Entities.Instructor", b =>
@@ -127,7 +129,7 @@ namespace Assignment02_EF.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Instructores", (string)null);
+                    b.ToTable("Instructores");
                 });
 
             modelBuilder.Entity("Assignment02_EF.Entities.Student", b =>
@@ -159,7 +161,7 @@ namespace Assignment02_EF.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Studentes", (string)null);
+                    b.ToTable("Studentes");
                 });
 
             modelBuilder.Entity("Assignment02_EF.Entities.StudentCourse", b =>
@@ -177,7 +179,7 @@ namespace Assignment02_EF.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("StudentCourse", (string)null);
+                    b.ToTable("StudentCourse");
                 });
 
             modelBuilder.Entity("Assignment02_EF.Entities.Topic", b =>
@@ -193,7 +195,7 @@ namespace Assignment02_EF.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Topices", (string)null);
+                    b.ToTable("Topices");
                 });
 
             modelBuilder.Entity("Assignment02_EF.Entities.Course", b =>

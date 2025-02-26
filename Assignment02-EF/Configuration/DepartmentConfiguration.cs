@@ -20,14 +20,14 @@ namespace Assignment02_EF.Configuration
             builder.Property(D => D.HiringDate)
                 .HasComputedColumnSql("GETDATE()");
 
-            //One T one
+            //One To one
 
             builder.HasOne(D => D.Manager)
                 .WithOne(I => I.ManageDepartment)
                 .HasForeignKey<Department>(D => D.ManagerId)
                 .IsRequired(false);
 
-            //MAny To Many
+            //One To Many
 
             builder.HasMany(D=>D.Instructors)
                 .WithOne(I=>I.Worker)

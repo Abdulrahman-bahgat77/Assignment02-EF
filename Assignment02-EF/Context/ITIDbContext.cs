@@ -14,7 +14,6 @@ namespace Assignment02_EF.Context
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departmentes { get; set; }
         public DbSet<Instructor> Instructores { get; set; }
-
         public DbSet<Student> Studentes { get; set; }
         public DbSet<Topic> Topices { get; set; }
 

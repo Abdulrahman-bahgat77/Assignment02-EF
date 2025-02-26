@@ -15,7 +15,7 @@ namespace Assignment02_EF.Entities
         public int Duration { get; set; }
 
         [ForeignKey("Topics")]
-        public int TopicId { get; set; }
+        public int? TopicId { get; set; }
         public Topic Topics  { get; set; }
 
         public ICollection<StudentCourse> CourseStudents { get; set; } = new HashSet<StudentCourse>();

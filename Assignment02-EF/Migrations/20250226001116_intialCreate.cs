@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Assignment02_EF.Migrations
 {
-    public partial class IntialCreate : Migration
+    public partial class intialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -89,7 +89,7 @@ namespace Assignment02_EF.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true, defaultValue: "Giza"),
                     Bouns = table.Column<double>(type: "float", nullable: false),
                     HoursRate = table.Column<decimal>(type: "decimal(18,3)", nullable: false),
-                    DepartmentId = table.Column<int>(type: "int", nullable: false)
+                    DepartmentId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

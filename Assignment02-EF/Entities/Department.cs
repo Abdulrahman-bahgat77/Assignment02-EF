@@ -14,16 +14,16 @@ namespace Assignment02_EF.Entities
         public string ? Name { get; set; }
         public DateTime HiringDate { get; set; }
 
-        [ForeignKey("Manager")]
-        public int ManagerId { get; set; }
+        [ForeignKey(nameof(Manager))]
+        public int ?ManagerId { get; set; }
 
-        [InverseProperty("ManageDepartment")] //Note
+        [InverseProperty(nameof(Instructor.ManageDepartment))] //Note
         public   Instructor Manager { get; set; }
 
-        [InverseProperty("Worker")]
+        [InverseProperty(nameof(Instructor.Worker))]
         public ICollection<Instructor> Instructors { get; set; } = new HashSet<Instructor>();
 
-        [InverseProperty("Department")]
+        [InverseProperty(nameof(Student.Department))]
         public ICollection<Student> Students { get; set; }=new HashSet<Student>();
     }
 }

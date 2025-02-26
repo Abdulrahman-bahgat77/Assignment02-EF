@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment02_EF.Migrations
 {
     [DbContext(typeof(ITIDbContext))]
-    [Migration("20250223124725_Intial Create")]
-    partial class IntialCreate
+    [Migration("20250226001116_intialCreate")]
+    partial class intialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -112,7 +112,7 @@ namespace Assignment02_EF.Migrations
                     b.Property<double>("Bouns")
                         .HasColumnType("float");
 
-                    b.Property<int>("DepartmentId")
+                    b.Property<int?>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("HoursRate")
